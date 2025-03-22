@@ -25,7 +25,7 @@ function transformBullet(text: string, sectionTitle: string): React.ReactElement
     if (idx !== -1) {
       return (
         <>
-          <strong>{singleLine.slice(0, idx).trim()}:</strong> {singleLine.slice(idx + 1).trim()}
+          <span className="font-medium">{singleLine.slice(0, idx).trim()}:</span> {singleLine.slice(idx + 1).trim()}
         </>
       );
     }
@@ -311,10 +311,10 @@ export default function Home() {
         className="max-w-5xl w-full"
       >
         <div className="text-center mb-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
             To Hit or Not to Hit
           </h1>
-          <p className="text-base md:text-lg text-slate-700 mt-2 font-semibold">by Dirk Schiemann</p>
+          <p className="text-base md:text-lg text-slate-700 mt-2 font-medium">by Dirk Schiemann</p>
           <p className="text-base md:text-lg text-slate-700 mt-3 leading-relaxed">
             A curated codex of backgammon heuristics from Dirk&apos;s book
           </p>
@@ -328,14 +328,14 @@ export default function Home() {
             className="shadow-2xl border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-md mb-8 overflow-hidden"
           >
             <div className="px-6 pt-6 pb-4">
-              <h2 className="text-2xl font-bold text-slate-900 whitespace-normal tracking-tight">
+              <h2 className="text-2xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight">
                 {category.category}
               </h2>
             </div>
             <div className="p-6">
               {category.sections.map((section, idx) => (
                 <details key={idx} className="group">
-                  <summary className="text-lg md:text-xl font-semibold text-slate-800 transition-all break-words cursor-pointer tracking-tight">
+                  <summary className="text-lg md:text-xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight">
                     {section.title}
                   </summary>
                   <div className="mt-4">
@@ -346,7 +346,7 @@ export default function Home() {
                             key={i}
                             className="shadow-sm border border-slate-100 rounded-xl bg-white transition-transform hover:-translate-y-0.5 p-4"
                           >
-                            <p className="text-base md:text-lg text-slate-700 leading-relaxed break-words tracking-tight">
+                            <p className="text-base md:text-lg text-slate-700 leading-relaxed break-words">
                               {transformBullet(pt.text, section.title)}
                             </p>
                           </div>
