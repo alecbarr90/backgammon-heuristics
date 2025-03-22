@@ -338,13 +338,13 @@ export default function Home() {
                   <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight">
                     {section.title}
                   </summary>
-                  <div className="mt-3">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="mt-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {section.points.map((pt, i) => {
                         return (
                           <div
                             key={i}
-                            className="shadow-sm border border-slate-200 rounded-xl bg-white transition-transform hover:-translate-y-0.5 p-3.5"
+                            className="shadow-sm border border-slate-200 rounded-xl bg-white transition-transform hover:-translate-y-0.5 p-4"
                           >
                             <p className="text-lg md:text-xl text-slate-700 leading-relaxed break-words">
                               {transformBullet(pt.text, section.title)}
