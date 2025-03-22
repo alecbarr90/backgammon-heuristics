@@ -20,7 +20,7 @@ function transformBullet(text: string, sectionTitle: string): React.ReactElement
   const singleLine = text.replace(/[\n\r]+/g, ' ').replace(/\s+/g, ' ').trim();
   
   // For section 8, bold portion before the colon
-  if (sectionTitle === "8. Leaving our Anchor in Order to Hit") {
+  if (sectionTitle === "Leaving our Anchor in Order to Hit") {
     const idx = singleLine.indexOf(":");
     if (idx !== -1) {
       return (
@@ -39,7 +39,7 @@ const heuristicsData: HeuristicCategory[] = [
     category: "Basic Concepts",
     sections: [
       {
-        title: "1. Reasons for Hitting",
+        title: "Reasons for Hitting",
         points: [
           {
             text: "Checker play and cube play can't be viewed in isolation. Your goal is to maximize your cubeful equity, meaning that you need to factor in possible future cube actions when deciding whether to hit. A typical example is taking into account the cube action after your opponent dances."
@@ -70,7 +70,7 @@ const heuristicsData: HeuristicCategory[] = [
     category: "Hitting in the Inner Board",
     sections: [
       {
-        title: "2. Hitting Loose in the Early Game",
+        title: "Hitting Loose in the Early Game",
         points: [
           {
             text: "In the early game when there is no constructive alternative, hit loose on your 5 point and, generally, on your 4 point."
@@ -108,7 +108,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "3. Hitting Loose in the Middle Game",
+        title: "Hitting Loose in the Middle Game",
         points: [
           {
             text: "Deeper into the game, when both players have developed their front positions more fully, both the risks and the rewards of hitting loose increase. You therefore need to carefully evaluate how often the aggressive approach works and how much you gain when it does."
@@ -137,7 +137,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "4. The Tempo Hit",
+        title: "The Tempo Hit",
         points: [
           {
             text: "The more numbers your opponent has to attack your back checkers the more important it becomes to make a tempo hit."
@@ -160,7 +160,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "5. The Double Hit",
+        title: "The Double Hit",
         points: [
           {
             text: "When hitting loose on a high inner board point leaves you with multiple blots, you should continue and hit a second checker if possible, even on your own ace point."
@@ -192,7 +192,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "6. Hitting in the Opponent's Inner Board",
+        title: "Hitting in the Opponent's Inner Board",
         points: [
           {
             text: "Hitting in our opponent's inner board is usually the default play. However, there are possible reasons for NOT hitting in our opponent's inner board..."
@@ -220,7 +220,7 @@ const heuristicsData: HeuristicCategory[] = [
     category: "Hitting in the Outer Board",
     sections: [
       {
-        title: "7. Hitting or Making a Defensive Point",
+        title: "Hitting or Making a Defensive Point",
         points: [
           {
             text: "Hitting tends to win more gammons and often wins more games than making the anchor but it generally loses many more gammons. Therefore at gammon-save the default play is to anchor whereas at gammon-go it is to hit."
@@ -243,7 +243,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "8. Leaving our Anchor in Order to Hit",
+        title: "Leaving our Anchor in Order to Hit",
         points: [
           {
             text: "Overall situation: be more inclined to hit when your overall situation is bad. Even taking a significant risk is preferable to ending up in a holding game with a large racing deficit."
@@ -266,7 +266,7 @@ const heuristicsData: HeuristicCategory[] = [
         ]
       },
       {
-        title: "9. Hitting or Making an Offensive Point",
+        title: "Hitting or Making an Offensive Point",
         points: [
           {
             text: "Make your 5 point instead of hitting in your own outfield unless you see a compelling reason not to do so."
@@ -311,11 +311,11 @@ export default function Home() {
         className="max-w-5xl w-full"
       >
         <div className="text-center mb-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight leading-tight">
             To Hit or Not to Hit
           </h1>
-          <p className="text-base md:text-lg text-slate-700 mt-2 font-medium">by Dirk Schiemann</p>
-          <p className="text-base md:text-lg text-slate-700 mt-3 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-700 mt-2 font-medium">by Dirk Schiemann</p>
+          <p className="text-lg md:text-xl text-slate-700 mt-3 leading-relaxed">
             A curated codex of backgammon heuristics from Dirk&apos;s book
           </p>
         </div>
@@ -328,14 +328,14 @@ export default function Home() {
             className="shadow-2xl border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-md mb-8 overflow-hidden"
           >
             <div className="px-6 pt-6 pb-4">
-              <h2 className="text-2xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight">
+              <h2 className="text-3xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight">
                 {category.category}
               </h2>
             </div>
             <div className="p-6">
               {category.sections.map((section, idx) => (
                 <details key={idx} className="group">
-                  <summary className="text-lg md:text-xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight">
+                  <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight">
                     {section.title}
                   </summary>
                   <div className="mt-4">
@@ -346,7 +346,7 @@ export default function Home() {
                             key={i}
                             className="shadow-sm border border-slate-100 rounded-xl bg-white transition-transform hover:-translate-y-0.5 p-4"
                           >
-                            <p className="text-base md:text-lg text-slate-700 leading-relaxed break-words">
+                            <p className="text-lg md:text-xl text-slate-700 leading-relaxed break-words">
                               {transformBullet(pt.text, section.title)}
                             </p>
                           </div>
