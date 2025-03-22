@@ -25,7 +25,7 @@ function transformBullet(text: string, sectionTitle: string): React.ReactElement
     if (idx !== -1) {
       return (
         <>
-          <span className="font-medium">{singleLine.slice(0, idx).trim()}:</span> {singleLine.slice(idx + 1).trim()}
+          <strong>{singleLine.slice(0, idx).trim()}:</strong> {singleLine.slice(idx + 1).trim()}
         </>
       );
     }
