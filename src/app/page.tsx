@@ -311,7 +311,7 @@ export default function Home() {
         className="max-w-5xl w-full"
       >
         <div className="text-center mb-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight font-serif">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 tracking-tight">
             To Hit or Not to Hit
           </h1>
           <p className="text-base md:text-lg text-slate-700 mt-2 font-semibold">by Dirk Schiemann</p>
@@ -328,14 +328,14 @@ export default function Home() {
             className="shadow-2xl border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-md mb-8 overflow-hidden"
           >
             <div className="px-6 pt-6 pb-4">
-              <h2 className="text-2xl font-bold text-slate-900 font-serif whitespace-normal">
+              <h2 className="text-2xl font-bold text-slate-900 whitespace-normal tracking-tight">
                 {category.category}
               </h2>
             </div>
             <div className="p-6">
               {category.sections.map((section, idx) => (
-                <details key={idx} className="mb-6 group">
-                  <summary className="text-lg md:text-xl font-semibold text-slate-800 transition-all break-words cursor-pointer">
+                <details key={idx} className="group">
+                  <summary className="text-lg md:text-xl font-semibold text-slate-800 transition-all break-words cursor-pointer tracking-tight">
                     {section.title}
                   </summary>
                   <div className="mt-4">
@@ -346,7 +346,7 @@ export default function Home() {
                             key={i}
                             className="shadow-sm border border-slate-100 rounded-xl bg-white transition-transform hover:-translate-y-0.5 p-4"
                           >
-                            <p className="text-base md:text-lg text-slate-700 leading-relaxed break-words">
+                            <p className="text-base md:text-lg text-slate-700 leading-relaxed break-words tracking-tight">
                               {transformBullet(pt.text, section.title)}
                             </p>
                           </div>
