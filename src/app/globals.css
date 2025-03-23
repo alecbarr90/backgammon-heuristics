@@ -360,6 +360,7 @@ details summary::after {
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.3s ease;
+  margin-left: auto;
 }
 
 details[open] summary::after {

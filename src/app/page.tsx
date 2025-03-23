@@ -1,6 +1,17 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { 
+  Target, 
+  Zap, 
+  Clock, 
+  Layers, 
+  Compass, 
+  Anchor, 
+  Shield, 
+  ArrowUpRight, 
+  Rocket 
+} from 'lucide-react';
 
 interface HeuristicPoint {
   text: string;
@@ -16,10 +27,43 @@ interface HeuristicCategory {
   sections: HeuristicSection[];
 }
 
+// Get icon based on section or category title
+function getIcon(title: string) {
+  switch (title) {
+    case "Reasons for Hitting":
+      return <Target className="w-5 h-5" />;
+    case "Hitting Loose in the Early Game":
+      return <Zap className="w-5 h-5" />;
+    case "Hitting Loose in the Middle Game":
+      return <Compass className="w-5 h-5" />;
+    case "The Tempo Hit":
+      return <Clock className="w-5 h-5" />;
+    case "The Double Hit":
+      return <Layers className="w-5 h-5" />;
+    case "Hitting in the Opponent's Inner Board":
+      return <ArrowUpRight className="w-5 h-5" />;
+    case "Hitting or Making a Defensive Point":
+      return <Shield className="w-5 h-5" />;
+    case "Leaving our Anchor in Order to Hit":
+      return <Anchor className="w-5 h-5" />;
+    case "Hitting or Making an Offensive Point":
+      return <Rocket className="w-5 h-5" />;
+    // Category icons
+    case "Basic Concepts":
+      return <Target className="w-6 h-6" />;
+    case "Hitting in the Inner Board":
+      return <ArrowUpRight className="w-6 h-6" />;
+    case "Hitting in the Outer Board":
+      return <Compass className="w-6 h-6" />;
+    default:
+      return <Target className="w-5 h-5" />;
+  }
+}
+
 function transformBullet(text: string, sectionTitle: string): React.ReactElement {
   const singleLine = text.replace(/[\n\r]+/g, ' ').replace(/\s+/g, ' ').trim();
   
-  // For section 8, bold portion before the colon
+  // For "Leaving our Anchor" section, bold portion before the colon
   if (sectionTitle === "Leaving our Anchor in Order to Hit") {
     const idx = singleLine.indexOf(":");
     if (idx !== -1) {
@@ -328,15 +372,17 @@ export default function Home() {
             className="shadow-2xl border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-md mb-8 overflow-hidden"
           >
             <div className="px-6 pt-6 pb-4">
-              <h2 className="text-3xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight">
-                {category.category}
+              <h2 className="text-3xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight flex items-center">
+                <span className="mr-3 text-emerald-700">{getIcon(category.category)}</span>
+                <span>{category.category}</span>
               </h2>
             </div>
             <div className="py-4 px-6">
               {category.sections.map((section, idx) => (
                 <details key={idx} className="group">
-                  <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight">
-                    {section.title}
+                  <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight flex items-center">
+                    <span className="mr-3 text-emerald-600">{getIcon(section.title)}</span>
+                    <span>{section.title}</span>
                   </summary>
                   <div className="mt-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
