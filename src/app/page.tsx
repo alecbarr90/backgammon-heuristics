@@ -27,7 +27,7 @@ interface HeuristicCategory {
   sections: HeuristicSection[];
 }
 
-// Get icon based on section or category title
+// Get icon based on section title
 function getIcon(title: string) {
   switch (title) {
     case "Reasons for Hitting":
@@ -48,13 +48,6 @@ function getIcon(title: string) {
       return <Anchor className="w-5 h-5" />;
     case "Hitting or Making an Offensive Point":
       return <Rocket className="w-5 h-5" />;
-    // Category icons
-    case "Basic Concepts":
-      return <Target className="w-6 h-6" />;
-    case "Hitting in the Inner Board":
-      return <ArrowUpRight className="w-6 h-6" />;
-    case "Hitting in the Outer Board":
-      return <Compass className="w-6 h-6" />;
     default:
       return <Target className="w-5 h-5" />;
   }
@@ -372,16 +365,15 @@ export default function Home() {
             className="shadow-2xl border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-md mb-8 overflow-hidden"
           >
             <div className="px-6 pt-6 pb-4">
-              <h2 className="text-3xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight flex items-center">
-                <span className="mr-3 text-emerald-700">{getIcon(category.category)}</span>
-                <span>{category.category}</span>
+              <h2 className="text-3xl font-bold text-slate-900 whitespace-normal tracking-tight letter-spacing-tight">
+                {category.category}
               </h2>
             </div>
             <div className="py-4 px-6">
               {category.sections.map((section, idx) => (
                 <details key={idx} className="group">
-                  <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight flex items-center">
-                    <span className="mr-3 text-emerald-600">{getIcon(section.title)}</span>
+                  <summary className="text-xl md:text-2xl font-medium text-slate-800 transition-all break-words cursor-pointer tracking-tight flex items-center gap-4">
+                    <span className="flex items-center justify-center text-emerald-600 min-w-6 h-6">{getIcon(section.title)}</span>
                     <span>{section.title}</span>
                   </summary>
                   <div className="mt-4">
