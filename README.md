@@ -1,55 +1,53 @@
-# Backgammon Heuristics - To Hit or Not to Hit
+# Backgammon Heuristics — To Hit or Not to Hit
 
-A web application showcasing backgammon heuristics from Dirk Schiemann's book. This interactive guide helps backgammon players learn key decision-making principles.
+An independent study aid presenting backgammon heuristics from Dirk Schiemann's book. The guide groups key decision-making principles into expandable sections for quick reference.
 
-## Live Demo
+## Live site
 
-Visit the live site at [your-deployed-url.com](https://your-deployed-url.com)
+Visit [backgammon-heuristics.vercel.app](https://backgammon-heuristics.vercel.app).
 
 ## Features
 
-- Organized collection of backgammon heuristics
-- Categorized by game situation
-- Responsive design for all devices
-- Smooth animations and transitions
+- Heuristics organised by game situation
+- Responsive layout for desktop and mobile
+- Expandable sections for focused study
+- Static production output with no accounts or user data
 
-## Getting Started
+## Local development
 
-First, run the development server:
+Install the pinned dependencies and start the development server:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Quality checks
+
+Run the same checks used by GitHub Actions:
+
+```bash
+npm test
+npm run lint
+npm run build
+npm audit --audit-level=high
+```
 
 ## Deployment
 
-### Deploy on Vercel (Recommended)
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
-
-1. Push your code to a GitHub repository
-2. Import your repository on Vercel
-3. Vercel will detect Next.js and configure the build settings automatically
-
-### Other Deployment Options
-
-You can also deploy this site on any platform that supports Next.js applications:
-
-1. Build the application: `npm run build`
-2. Start the production server: `npm run start`
+The production site is deployed on Vercel from the `main` branch. Vercel detects the Next.js project and runs `npm run build`.
 
 ## Technologies
 
-- [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vitest
+
+## Attribution and reuse
+
+This repository is an independent reference project and is not affiliated with or endorsed by Dirk Schiemann or the book's publisher. The heuristic wording is book-derived material. No licence to reuse the book-derived content is granted by this repository; confirm the relevant rights before redistributing it.
